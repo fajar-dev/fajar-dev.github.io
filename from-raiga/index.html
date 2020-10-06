@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>HAPPY BIRTHDAY</title>
+	<link rel="shortcut icon" href="./assets/img/balloons.png">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Secular+One&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Courgette&display=swap" rel="stylesheet"> 
+     <!-- User Style -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style></style>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+
+  <body>
+  <audio src="./assets/mamerico-kirarifutari.mp3" autoplay="autoplay"></audio>
+    <div id="bg">
+	
+		  <!--<a href="./nembak-nih" class="w3-button w3-red w3-round-large">Click ini tante -></a>-->
+      <div  id="particles-js"></div>
+      <div class="container">
+        <div class="text-container">	
+          <h1 id="greeting"></h1>
+         <h4 id="quotes"></h4>
+          <em id="quotes-author" style="text-align: center;" <!--class="text-muted"--></em>
+        </div></div>
+    </div>
+	
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"
+    ></script>
+    <!-- Particles.js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+    ></script>
+    <!-- TypeitJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"
+    ></script>
+    <script type="text/javascript" src="assets/js/variables.js"></script>
+    <script type="text/javascript" src="assets/js/functions.js"></script>
+	<script type="text/javascript" src="assets/js/clock.js"></script>
+    <script>
+      
+      const nickText = random(variables.nicknames);
+      const tmpQuotes = random(Object.keys(variables.quotes));
+      const { quote, author } = variables.quotes[tmpQuotes];
+      let textToWrite = [];
+      // prettier-ignore
+      variables.generated.map(function (text) {
+        textToWrite.push(text.replace("{nicknames}", nickText));
+      });
+
+      $(document).ready(function () {
+        
+        generateTypeIt("#greeting", 100, true, textToWrite);
+        generateTypeIt("#quotes", 120, false, quote);
+        $("#quotes-author").html(`~  ${author} ~`);
+        particlesJS("particles-js", particlesConfig, function () {
+          console.log("callback - particles.js config loaded");
+        });
+      });
+    </script>
+	
+  </body>
+</html>
