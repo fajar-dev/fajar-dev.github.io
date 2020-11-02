@@ -39,7 +39,7 @@ const particlesConfig = {
         nb_sides: 5,
       },
       image: {
-        src: "./assets/img/heart3.png",
+        src: "./assets/img/pawprint.png",
         width: 60,
         height: 60,
       },
