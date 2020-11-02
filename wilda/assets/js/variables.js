@@ -7,7 +7,7 @@ const variables = {
     night: "Selamat Malam",
   },
   quotes: [
-    { quote: '" Tetap Semangat dan Teruslah Tersenyum :) "', author: "om fajar -" },
+    { quote: '" teruslah tersenyum, Aku sayang sama kamu :) "', author: "fajar ~" },
     //{ quote: "I love you.", author: "Brian" },
     //{ quote: "Aku sayang kamu!", author: "Ian" },
     //{ quote: "Ian sayang Ava ♥", author: "Ian-nya Ava!" },
@@ -39,7 +39,7 @@ const particlesConfig = {
         nb_sides: 5,
       },
       image: {
-        src: "./assets/img/flower.png",
+        src: "./assets/img/heart.png",
         width: 60,
         height: 60,
       },
