@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HBD ZURIA ULFA</title>
+	  <link rel="shortcut icon" href="balloons.png">
+    <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Acme&family=Courgette&display=swap" rel="stylesheet"> 
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"rel="stylesheet">
+     <!-- User Style -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <audio src="mamerico-kirarifutari.mp3" autoplay="autoplay"></audio>	
+    <div  id="particles-js"></div>
+      <div class="container">
+        <div class="text-container">	
+          <h1 class="mb-4" id="greeting"></h1>
+          <h4 class="mb-5" id="quotes"></h4>
+          <em id="quotes-author"></em>
+        </div>
+      </div>
+    </div>
+	
+    <!-- JQuery -->
+    <script
+      type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Particles.js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- TypeitJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
+    <script type="text/javascript" src="variables.js"></script>
+    <script>
+      const nickText = random(variables);
+      const tmpQuotes = random(Object.keys(variables.quotes));
+      const { quote, author } = variables.quotes[tmpQuotes];
+      let textToWrite = [];
+      // prettier-ignore
+      variables.generated.map(function (text) {
+        textToWrite.push(text.replace(nickText));
+      });
+
+      $(document).ready(function () {   
+        generateTypeIt("#greeting", 100, true, textToWrite);
+        generateTypeIt("#quotes", 120, false, quote);
+        $("#quotes-author").html(`~  ${author} ~`);
+        particlesJS("particles-js", particlesConfig, function () {
+          console.log("callback - particles.js config loaded");
+        });
+      });
+    </script>
+	
+  </body>
+</html>
