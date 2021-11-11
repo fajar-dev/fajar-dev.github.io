@@ -3,7 +3,7 @@ new Typed('#typed',{
   strings : ['Fajar Rivaldi Chan'],
   typeSpeed : 90,
   delaySpeed : 120,
-  loop : true
+  loop : false
 });
 
 //wa
