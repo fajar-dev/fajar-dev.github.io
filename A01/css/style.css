@@ -96,6 +96,9 @@ nav a:hover{
   display: flex;
   flex-wrap: wrap;
 }
+.right  .menu .item{
+  display: none !important;
+}
 .brand {
   flex: 1;
   margin-top: -8px;
@@ -121,6 +124,13 @@ nav a:hover{
       flex-wrap: nowrap;
       font-weight: 500;
       padding: 10px 0;
+  }
+  .right  .menu .item{
+    display: block !important;
+    padding: 0 30px;
+  }
+  .left  .menu .item{
+    display: none !important;
   }
   .menu li span {
       display: block;
